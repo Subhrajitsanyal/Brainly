@@ -18,17 +18,17 @@ export function Sidebar() {
                 <SidebarItem text="Youtube" icon={<YoutubeIcon />} />
             </div>
 
-            {/* ✅ Logout Button */}
+            {/* Logout Button */}
             <div className="absolute bottom-8 left-6 w-full pr-6">
                 <button
                     onClick={() => {
                         localStorage.removeItem("token"); // token clear
-                        toast.success("You have been logged out!"); // ✅ popup show
+                        toast.success("You have been logged out!"); 
                         setTimeout(() => {
-                            window.location.href = "/signin";   // ✅ thoda delay ke baad redirect
+                            window.location.href = "/";   
                         }, 1000);
                     }}
-                    className="bg-purple-600 text-white py-2.5 px-24 rounded-lg hover:bg-purple-700 transition"
+                    className="bg-purple-200 text-purple-600 py-2.5 px-24 rounded-lg hover:bg-purple-300 transition"
                 >
                     Logout
                 </button>
@@ -36,3 +36,4 @@ export function Sidebar() {
         </div>
     );
 }
+//    className="bg-purple-200 text-purple-600 py-2.5 px-24 rounded-md font-light flex items-center">

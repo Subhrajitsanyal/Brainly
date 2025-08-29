@@ -8,8 +8,7 @@ import { Sidebar } from "../components/Sidebar"
 import { useContent } from "../hooks/useContent"
 import { BACKEND_URL } from "../config"
 import axios from "axios"
-import { useNavigate } from "react-router-dom"   // ✅ naya import
-// import { toast } from "react-toastify";         // ✅ naya import
+import { useNavigate } from "react-router-dom"   
 
 // define response type from backend
 interface ShareResponse {
@@ -19,18 +18,13 @@ interface ShareResponse {
 export function Dashboard() {
   const [modalOpen, setModalOpen] = useState(false);
   const { contents, refresh } = useContent();
-  const navigate = useNavigate();  // ✅ navigation ke liye
+  const navigate = useNavigate();  
 
   useEffect(() => {
     refresh();
   }, [modalOpen]);
 
-  // ✅ logout function add
-  // const handleLogout = () => {
-  //   localStorage.removeItem("token");
-  //   toast.success("You are signed out!");
-  //   navigate("/signin");
-  // };
+  
 
   return (
     <div>
